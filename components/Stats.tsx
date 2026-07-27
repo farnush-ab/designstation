@@ -29,8 +29,8 @@ const data = [
 
 export default function Stats() {
   return (
-    <section className="relative border-y border-line bg-paper-50 py-14 sm:py-20">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section className="relative border-y border-line bg-ink-50 py-10 sm:py-14">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="grid gap-8 sm:gap-10 md:grid-cols-4">
           {data.map((d, i) => (
             <motion.div
@@ -43,9 +43,9 @@ export default function Stats() {
             >
               <div className="flex items-baseline justify-between">
                 <span className="kicker">0{i + 1}</span>
-                <span className="serif italic text-brass-500 text-xs">— {d.en}</span>
+                <span className="serif italic text-ink-800 text-xs">— {d.en}</span>
               </div>
-              <div className="display mt-4 text-5xl leading-none text-ink-900 sm:text-6xl lg:text-7xl">
+              <div className="display mt-3 text-3xl leading-none text-ink-900 sm:text-4xl lg:text-5xl">
                 <Counter to={d.value} suffix={d.suffix} />
               </div>
               <div className="mt-3 text-xs text-ink-900/60">{d.label}</div>

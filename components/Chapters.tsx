@@ -10,7 +10,7 @@ const chapters = [
     desc: "چرخ‌های تک‌سوزن صنعتی برای دوخت مستقیم؛ سرعت بالا و دقت میلی‌متری.",
     speed: "۵۵۰۰",
     illus: "straight",
-    accent: "bg-ink-900 text-paper-50",
+    accent: "bg-ink-900 text-ink-100",
   },
   {
     en: "Overlock",
@@ -18,7 +18,7 @@ const chapters = [
     desc: "اورلاک‌های ۳ تا ۵ نخ برای پرداخت لبه و دوخت کشسان.",
     speed: "۷۰۰۰",
     illus: "overlock",
-    accent: "bg-paper-100 text-ink-900",
+    accent: "bg-ink-100 text-ink-900",
   },
   {
     en: "Coverstitch",
@@ -26,7 +26,7 @@ const chapters = [
     desc: "کاوراستیچ برای دوخت تزئینی و حاشیه‌ای روی پارچه‌های کشی.",
     speed: "۶۲۰۰",
     illus: "cover",
-    accent: "bg-brass-500 text-ink-900",
+    accent: "bg-ink-800 text-ink-900",
   },
 ];
 
@@ -76,7 +76,7 @@ function ChapterArt({ kind }: { kind: string }) {
 export default function Chapters() {
   return (
     <section id="chapters" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-[1400px] container-x">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest2 text-ink-900/60">
@@ -84,8 +84,8 @@ export default function Chapters() {
               <span className="h-px w-8 bg-line" />
               <span className="serif italic normal-case text-sm text-ink-900/60">by machine</span>
             </div>
-            <h2 className="display mt-4 text-5xl leading-[0.95] text-ink-900 sm:text-6xl lg:text-7xl">
-              بر اساس <span className="italic-serif italic text-brass-500">چرخِ شما</span>
+            <h2 className="display mt-4 text-3xl leading-[1] text-ink-900 sm:text-4xl lg:text-5xl">
+              بر اساس <span className="italic-serif italic text-ink-800">چرخِ شما</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-ink-900/70 leading-7">
@@ -125,14 +125,14 @@ function ChapterCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-      className="mx-4 sm:mx-8 lg:mx-12"
+      className="mx-6 sm:mx-14 lg:mx-24 xl:mx-[140px]"
     >
       <a
         href="#"
-        className={`group relative flex flex-col overflow-hidden rounded-3xl ${chapter.accent} md:min-h-[380px] md:flex-row`}
+        className={`group relative flex flex-col overflow-hidden rounded-3xl ${chapter.accent} md:min-h-[300px] md:flex-row`}
       >
         {/* left copy */}
-        <div className="relative flex flex-1 flex-col justify-between p-8 sm:p-10 lg:p-14">
+        <div className="relative flex flex-1 flex-col justify-between p-6 sm:p-8 lg:p-10">
           <div className="flex items-center justify-between">
             <span className="kicker" style={{ color: "currentColor", opacity: 0.65 }}>
               chapter · 0{index + 1}
@@ -140,21 +140,21 @@ function ChapterCard({
             <span className="serif italic text-sm opacity-70">— {chapter.en}</span>
           </div>
 
-          <div className="mt-10">
-            <h3 className="display text-[15vw] leading-[0.9] sm:text-[9vw] lg:text-[7vw]">
+          <div className="mt-8">
+            <h3 className="display text-[9vw] leading-[0.95] sm:text-[5vw] lg:text-[4vw]">
               {chapter.name}
             </h3>
-            <p className="mt-5 max-w-sm text-sm leading-7 opacity-80 sm:text-base sm:leading-8">
+            <p className="mt-4 max-w-sm text-sm leading-7 opacity-80">
               {chapter.desc}
             </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-6">
+          <div className="mt-8 flex flex-wrap items-center gap-6">
             <div>
               <div className="kicker" style={{ color: "currentColor", opacity: 0.65 }}>
                 Max speed
               </div>
-              <div className="serif mt-1 text-2xl">
+              <div className="serif mt-1 text-lg">
                 {chapter.speed} <span className="text-xs opacity-60">spm</span>
               </div>
             </div>
@@ -168,7 +168,7 @@ function ChapterCard({
         <div className="relative flex flex-1 items-center justify-center overflow-hidden p-6 sm:p-8">
           <motion.div
             style={{ y }}
-            className="relative flex h-56 w-full max-w-xl items-center justify-center sm:h-64 lg:h-80"
+            className="relative flex h-40 w-full max-w-md items-center justify-center sm:h-52 lg:h-60"
           >
             <div className="pointer-events-none absolute inset-0">
               <div

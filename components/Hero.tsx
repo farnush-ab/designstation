@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate flex min-h-[100svh] flex-col justify-between overflow-hidden pt-24 pb-8 sm:pt-28"
+      className="relative isolate flex min-h-[92svh] flex-col justify-between overflow-hidden pt-24 pb-10 sm:pt-28"
     >
       {/* ambient blobs */}
       <motion.div
@@ -46,7 +46,7 @@ export default function Hero() {
       />
       <motion.div
         style={{ x: blobY, y: blobX }}
-        className="blob right-[-10%] bottom-[10%] h-[320px] w-[320px] bg-brass-400/50 sm:h-[480px] sm:w-[480px]"
+        className="blob right-[-10%] bottom-[10%] h-[320px] w-[320px] bg-ink-500/50 sm:h-[480px] sm:w-[480px]"
       />
 
       {/* subtle grid */}
@@ -55,7 +55,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.09]"
         style={{
           backgroundImage:
-            "linear-gradient(#0b1e30 1px, transparent 1px), linear-gradient(90deg, #0b1e30 1px, transparent 1px)",
+            "linear-gradient(#102b42 1px, transparent 1px), linear-gradient(90deg, #102b42 1px, transparent 1px)",
           backgroundSize: "48px 48px",
           maskImage:
             "radial-gradient(ellipse at center, black 20%, transparent 75%)",
@@ -64,7 +64,7 @@ export default function Hero() {
 
       <motion.div
         style={{ y: heroY, scale: heroScale, opacity: heroFade }}
-        className="relative mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-between container-x"
+        className="relative mx-auto flex w-full max-w-[1240px] flex-1 flex-col justify-between container-x"
       >
         {/* Top meta row */}
         <motion.div
@@ -88,11 +88,11 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-ink-900"
           >
-            <span className="block serif italic text-[13vw] leading-[0.9] text-ink-900/85 sm:text-[9vw] lg:text-[7.5vw]">
+            <span className="block serif italic text-[8vw] leading-[0.95] text-ink-900/80 sm:text-[5vw] lg:text-[4vw]">
               the art of
             </span>
             <span
-              className="display block text-[22vw] leading-[0.88] sm:text-[16vw] lg:text-[13vw]"
+              className="display block text-[13vw] leading-[0.92] sm:text-[10vw] lg:text-[8vw]"
               style={{ fontWeight: 300 }}
             >
               {"نوراکو".split("").map((c, i) => (
@@ -154,7 +154,7 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 1 }}
             className="relative lg:col-span-6"
           >
-            <div className="perspective mx-auto max-w-md">
+            <div className="perspective mx-auto max-w-sm">
               <motion.div
                 style={{
                   rotateY: rotY,
@@ -171,7 +171,7 @@ export default function Hero() {
                   style={{ transform: "translateZ(-30px)" }}
                 />
                 <div
-                  className="absolute inset-0 rounded-3xl bg-paper-50 shadow-[0_60px_120px_-40px_rgba(11,30,48,0.5)]"
+                  className="absolute inset-0 rounded-3xl bg-ink-50 shadow-[0_60px_120px_-40px_rgba(11,30,48,0.5)]"
                   style={{ transform: "translateZ(0)" }}
                 />
                 {/* main SVG machine */}
@@ -186,7 +186,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-4 right-4 chip bg-paper-50/90 text-ink-900"
+                  className="absolute -top-4 right-4 chip bg-ink-50/90 text-ink-900"
                   style={{ transform: "translateZ(90px)" }}
                 >
                   ● منتخب امروز — PIN
@@ -194,10 +194,10 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, 8, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute bottom-4 left-4 chip bg-ink-900 text-paper-50 border-ink-900"
+                  className="absolute bottom-4 left-4 chip bg-ink-900 text-ink-100 border-ink-900"
                   style={{ transform: "translateZ(90px)" }}
                 >
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brass-400" />
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-ink-500" />
                   دقت دوخت ۹۹٫۹٪
                 </motion.div>
               </motion.div>
@@ -267,12 +267,12 @@ function MagneticButton({
       ref={ref}
       href={href}
       style={{ x: sx, y: sy }}
-      className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ink-900 px-6 py-3 text-sm text-paper-50 transition-colors hover:bg-ink-800"
+      className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ink-900 px-6 py-3 text-sm text-ink-100 transition-colors hover:bg-ink-800"
     >
       <span className="relative z-10 flex items-center gap-2">{children}</span>
       <span
         aria-hidden
-        className="absolute inset-0 -z-0 origin-left scale-x-0 rounded-full bg-brass-500 transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-x-100"
+        className="absolute inset-0 -z-0 origin-left scale-x-0 rounded-full bg-ink-800 transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-x-100"
       />
     </motion.a>
   );
@@ -283,17 +283,17 @@ function MachineArt() {
     <svg viewBox="0 0 500 400" className="h-full w-full">
       <defs>
         <linearGradient id="body" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0" stopColor="#0b1e30" />
+          <stop offset="0" stopColor="#102b42" />
           <stop offset="0.5" stopColor="#17476b" />
-          <stop offset="1" stopColor="#050e1a" />
+          <stop offset="1" stopColor="#0a1d31" />
         </linearGradient>
         <linearGradient id="metal" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0" stopColor="#c69a5c" />
-          <stop offset="1" stopColor="#7a5326" />
+          <stop offset="0" stopColor="#6f8fa3" />
+          <stop offset="1" stopColor="#102b42" />
         </linearGradient>
         <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stopColor="#c69a5c" stopOpacity="0.6" />
-          <stop offset="1" stopColor="#c69a5c" stopOpacity="0" />
+          <stop offset="0" stopColor="#6f8fa3" stopOpacity="0.6" />
+          <stop offset="1" stopColor="#6f8fa3" stopOpacity="0" />
         </radialGradient>
       </defs>
       {/* soft glow behind wheel */}
@@ -301,7 +301,7 @@ function MachineArt() {
 
       {/* base */}
       <rect x="30" y="290" width="440" height="70" rx="10" fill="url(#body)" />
-      <rect x="30" y="285" width="440" height="6" rx="3" fill="#b8874a" opacity="0.35" />
+      <rect x="30" y="285" width="440" height="6" rx="3" fill="#3a6a8a" opacity="0.35" />
 
       {/* body */}
       <path
@@ -309,22 +309,22 @@ function MachineArt() {
         fill="url(#body)"
       />
       {/* head */}
-      <rect x="395" y="120" width="42" height="160" rx="8" fill="#050e1a" />
-      <rect x="395" y="120" width="42" height="8" rx="3" fill="#b8874a" opacity="0.4" />
+      <rect x="395" y="120" width="42" height="160" rx="8" fill="#0a1d31" />
+      <rect x="395" y="120" width="42" height="8" rx="3" fill="#3a6a8a" opacity="0.4" />
 
       {/* spool pins */}
-      <g fill="#efe8d6">
+      <g fill="#ebebee">
         <rect x="120" y="70" width="3" height="40" rx="1.5" />
         <rect x="360" y="70" width="3" height="40" rx="1.5" />
-        <ellipse cx="121.5" cy="70" rx="12" ry="4" fill="#c69a5c" />
-        <ellipse cx="361.5" cy="70" rx="12" ry="4" fill="#c69a5c" />
+        <ellipse cx="121.5" cy="70" rx="12" ry="4" fill="#6f8fa3" />
+        <ellipse cx="361.5" cy="70" rx="12" ry="4" fill="#6f8fa3" />
       </g>
 
       {/* hand wheel */}
       <g>
-        <circle cx="120" cy="240" r="42" fill="#050e1a" />
+        <circle cx="120" cy="240" r="42" fill="#0a1d31" />
         <circle cx="120" cy="240" r="28" fill="url(#metal)" />
-        <circle cx="120" cy="240" r="6" fill="#050e1a" />
+        <circle cx="120" cy="240" r="6" fill="#0a1d31" />
       </g>
 
       {/* needle bar */}
@@ -333,13 +333,13 @@ function MachineArt() {
       {/* fabric */}
       <path
         d="M40 355 Q250 320 460 355 L460 400 L40 400 Z"
-        fill="#efe8d6"
+        fill="#ebebee"
       />
 
       {/* stitch line */}
       <motion.path
         d="M60 370 H440"
-        stroke="#0b1e30"
+        stroke="#102b42"
         strokeWidth="1.5"
         strokeDasharray="4 6"
         fill="none"
@@ -347,16 +347,16 @@ function MachineArt() {
 
       {/* brand callout */}
       <g>
-        <line x1="440" y1="140" x2="475" y2="105" stroke="#0b1e30" strokeWidth="0.8" />
-        <circle cx="440" cy="140" r="2.5" fill="#0b1e30" />
-        <text x="478" y="102" fill="#0b1e30" fontSize="9" letterSpacing="1.8" style={{ fontFamily: "var(--font-serif)" }}>
-          brass · 22k
+        <line x1="440" y1="140" x2="475" y2="105" stroke="#102b42" strokeWidth="0.8" />
+        <circle cx="440" cy="140" r="2.5" fill="#102b42" />
+        <text x="478" y="102" fill="#102b42" fontSize="9" letterSpacing="1.8" style={{ fontFamily: "var(--font-serif)" }}>
+          steel · precision
         </text>
       </g>
       <g>
-        <line x1="120" y1="240" x2="70" y2="180" stroke="#0b1e30" strokeWidth="0.8" />
-        <circle cx="120" cy="240" r="2.5" fill="#0b1e30" />
-        <text x="20" y="176" fill="#0b1e30" fontSize="9" letterSpacing="1.8" style={{ fontFamily: "var(--font-serif)" }}>
+        <line x1="120" y1="240" x2="70" y2="180" stroke="#102b42" strokeWidth="0.8" />
+        <circle cx="120" cy="240" r="2.5" fill="#102b42" />
+        <text x="20" y="176" fill="#102b42" fontSize="9" letterSpacing="1.8" style={{ fontFamily: "var(--font-serif)" }}>
           hand wheel
         </text>
       </g>

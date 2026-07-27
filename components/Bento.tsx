@@ -12,7 +12,7 @@ const cats = [
 ];
 
 function Illus({ kind }: { kind: string }) {
-  const s = { stroke: "#efe8d6", strokeWidth: 1.4, fill: "none", strokeLinecap: "round" as const };
+  const s = { stroke: "#ebebee", strokeWidth: 1.4, fill: "none", strokeLinecap: "round" as const };
   return (
     <svg viewBox="0 0 100 100" className="h-full w-full opacity-90">
       {kind === "needle" && (
@@ -77,8 +77,8 @@ function Illus({ kind }: { kind: string }) {
 
 export default function Bento() {
   return (
-    <section id="bento" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section id="bento" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest2 text-ink-900/60">
@@ -86,8 +86,8 @@ export default function Bento() {
               <span className="h-px w-8 bg-line" />
               <span className="serif italic normal-case text-sm text-ink-900/60">six chapters</span>
             </div>
-            <h2 className="display mt-4 text-5xl leading-[0.95] text-ink-900 sm:text-6xl lg:text-7xl">
-              مجموعه‌ی <span className="italic-serif italic text-brass-500">کامل</span>
+            <h2 className="display mt-4 text-3xl leading-[1] text-ink-900 sm:text-4xl lg:text-5xl">
+              مجموعه‌ی <span className="italic-serif italic text-ink-800">کامل</span>
             </h2>
           </div>
           <a
@@ -108,12 +108,12 @@ export default function Bento() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.05 }}
-              className={`group relative col-span-2 overflow-hidden rounded-2xl bg-ink-900 text-paper-50 sm:rounded-3xl ${c.span}`}
+              className={`group relative col-span-2 overflow-hidden rounded-2xl bg-ink-900 text-ink-100 sm:rounded-3xl ${c.span}`}
             >
               {/* corner meta */}
               <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-4 sm:p-5">
-                <span className="kicker text-paper-50/60">0{i + 1}</span>
-                <span className="kicker text-paper-50/60">
+                <span className="kicker text-ink-100/60">0{i + 1}</span>
+                <span className="kicker text-ink-100/60">
                   {c.count.toLocaleString("fa-IR")}
                 </span>
               </div>
@@ -130,19 +130,19 @@ export default function Bento() {
               {/* label bottom */}
               <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between p-4 sm:p-5">
                 <div>
-                  <div className="serif text-lg text-paper-50 sm:text-2xl">
+                  <div className="serif text-base text-ink-100 sm:text-lg">
                     {c.title}
                   </div>
-                  <div className="mt-0.5 kicker text-paper-50/50">{c.en}</div>
+                  <div className="mt-0.5 kicker text-ink-100/50">{c.en}</div>
                 </div>
-                <span className="grid h-8 w-8 place-items-center rounded-full border border-paper-50/30 text-paper-50 transition-transform group-hover:-rotate-45">
+                <span className="grid h-8 w-8 place-items-center rounded-full border border-ink-100/30 text-ink-100 transition-transform group-hover:-rotate-45">
                   <ArrowUpLeft className="h-3 w-3" />
                 </span>
               </div>
               {/* hover glow */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brass-500/0 via-brass-500/0 to-brass-500/25 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-ink-800/0 via-ink-800/0 to-ink-800/25 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
               />
             </motion.a>
           ))}

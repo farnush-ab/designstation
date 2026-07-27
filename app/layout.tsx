@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#efe8d6",
+  themeColor: "#ebebee",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-paper-100 text-ink-900">{children}</body>
+      <body className="bg-ink-100 text-ink-900">{children}</body>
     </html>
   );
 }

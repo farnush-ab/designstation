@@ -27,8 +27,8 @@ const posts = [
 
 export default function Journal() {
   return (
-    <section id="journal" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section id="journal" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest2 text-ink-900/60">
@@ -36,8 +36,8 @@ export default function Journal() {
               <span className="h-px w-8 bg-line" />
               <span className="serif italic normal-case text-sm text-ink-900/60">notes & essays</span>
             </div>
-            <h2 className="display mt-4 text-5xl leading-[0.95] text-ink-900 sm:text-6xl lg:text-7xl">
-              مجله‌ی <span className="italic-serif italic text-brass-500">نوراکو</span>
+            <h2 className="display mt-4 text-3xl leading-[1] text-ink-900 sm:text-4xl lg:text-5xl">
+              مجله‌ی <span className="italic-serif italic text-ink-800">نوراکو</span>
             </h2>
           </div>
           <a href="#" className="hover-line text-[11px] uppercase tracking-widest2 text-ink-900">
@@ -54,7 +54,7 @@ export default function Journal() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.08 }}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-line bg-paper-50"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-line bg-ink-50"
             >
               {/* cover */}
               <div className="relative aspect-[5/3] w-full overflow-hidden">
@@ -65,19 +65,19 @@ export default function Journal() {
                 >
                   <defs>
                     <linearGradient id={`jbg-${i}`} x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor={["#0b1e30", "#17476b", "#b8874a"][i]} />
-                      <stop offset="1" stopColor={["#050e1a", "#0b1e30", "#7a5326"][i]} />
+                      <stop offset="0" stopColor={["#102b42", "#17476b", "#3a6a8a"][i]} />
+                      <stop offset="1" stopColor={["#0a1d31", "#102b42", "#102b42"][i]} />
                     </linearGradient>
                   </defs>
                   <rect width="500" height="300" fill={`url(#jbg-${i})`} />
                   {/* pattern */}
-                  <g stroke="#efe8d6" strokeWidth="0.6" strokeOpacity="0.25" fill="none">
+                  <g stroke="#ebebee" strokeWidth="0.6" strokeOpacity="0.25" fill="none">
                     {Array.from({ length: 10 }).map((_, k) => (
                       <circle key={k} cx="250" cy="150" r={20 + k * 18} />
                     ))}
                   </g>
                   {/* mark */}
-                  <g transform="translate(200,90)" fill="#efe8d6" opacity="0.95">
+                  <g transform="translate(200,90)" fill="#ebebee" opacity="0.95">
                     <path d="M0 30 H90 V38 H72 C72 60 60 68 45 68 V80 H0 Z" />
                     <rect x="72" y="6" width="4" height="10" rx="1" />
                     <rect x="14" y="6" width="4" height="10" rx="1" />
@@ -86,7 +86,7 @@ export default function Journal() {
                     x="250"
                     y="270"
                     textAnchor="middle"
-                    fill="#efe8d6"
+                    fill="#ebebee"
                     fontSize="9"
                     letterSpacing="4"
                     opacity="0.6"
@@ -95,7 +95,7 @@ export default function Journal() {
                     — nooraco journal
                   </text>
                 </svg>
-                <div className="absolute right-4 top-4 chip bg-paper-50/90 text-ink-900">
+                <div className="absolute right-4 top-4 chip bg-ink-50/90 text-ink-900">
                   {p.cat}
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function Journal() {
                   <span>{p.date}</span>
                   <span>{p.read}</span>
                 </div>
-                <h3 className="serif mt-4 flex-1 text-2xl leading-[1.15] text-ink-900 sm:text-[26px]">
+                <h3 className="serif mt-3 flex-1 text-lg leading-[1.2] text-ink-900 sm:text-xl">
                   {p.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-ink-900/65">

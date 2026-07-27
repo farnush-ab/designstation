@@ -13,16 +13,16 @@ const faqs = [
 export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest2 text-ink-900/60">
               <span>۰۸ · faq</span>
               <span className="h-px w-8 bg-line" />
             </div>
-            <h2 className="display mt-4 text-5xl leading-[0.95] text-ink-900 sm:text-6xl">
-              پرسش‌های <span className="italic-serif italic text-brass-500">پرتکرار</span>
+            <h2 className="display mt-4 text-3xl leading-[1] text-ink-900 sm:text-4xl">
+              پرسش‌های <span className="italic-serif italic text-ink-800">پرتکرار</span>
             </h2>
             <p className="mt-5 max-w-sm text-sm text-ink-900/70 leading-7">
               جوابِ چند سؤال که پیش از خرید معمولاً از ما پرسیده می‌شود.
@@ -48,7 +48,7 @@ export default function Faq() {
                     >
                       <div className="flex flex-1 items-baseline gap-5">
                         <span className="kicker shrink-0 text-ink-900/40">0{i + 1}</span>
-                        <span className="serif text-lg text-ink-900 sm:text-xl">{f.q}</span>
+                        <span className="text-sm text-ink-900 sm:text-base">{f.q}</span>
                       </div>
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}

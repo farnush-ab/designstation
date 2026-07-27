@@ -8,23 +8,23 @@ const brands = [
     tagline: "قیچی و ابزار دستی",
     en: "Hand & Cutting Tools",
     desc: "خط تخصصی سوزن، قیچی و ابزار برشی. ساخت آلمان و ژاپن، دقت و ماندگاری بی‌رقیب.",
-    palette: "bg-paper-50 text-ink-900",
-    accent: "text-brass-500",
+    palette: "bg-ink-50 text-ink-900",
+    accent: "text-ink-800",
   },
   {
     name: "STRONG H",
     tagline: "قطعات داخلی چرخ‌های صنعتی",
     en: "Industrial Internals",
     desc: "چرخ‌دنده‌ها، یاتاقان‌ها و قطعات داخلی برای انواع چرخ‌های صنعتی پرکار.",
-    palette: "bg-ink-900 text-paper-50",
-    accent: "text-brass-400",
+    palette: "bg-ink-900 text-ink-100",
+    accent: "text-ink-500",
   },
 ];
 
 export default function Brands() {
   return (
-    <section id="brands" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section id="brands" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest2 text-ink-900/60">
           <span>۰۵ · brands</span>
           <span className="h-px w-8 bg-line" />
@@ -32,8 +32,8 @@ export default function Brands() {
             in-house
           </span>
         </div>
-        <h2 className="display mt-4 max-w-4xl text-5xl leading-[0.95] text-ink-900 sm:text-6xl lg:text-7xl">
-          دو خط، یک <span className="italic-serif italic text-brass-500">تعهد</span>
+        <h2 className="display mt-4 max-w-4xl text-3xl leading-[1] text-ink-900 sm:text-4xl lg:text-5xl">
+          دو خط، یک <span className="italic-serif italic text-ink-800">تعهد</span>
         </h2>
 
         <div className="mt-12 grid gap-4 lg:grid-cols-2 lg:gap-6">
@@ -45,7 +45,7 @@ export default function Brands() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.8, delay: i * 0.12 }}
-              className={`group relative overflow-hidden rounded-3xl p-8 sm:p-12 lg:p-14 lg:min-h-[520px] ${b.palette}`}
+              className={`group relative overflow-hidden rounded-3xl p-6 sm:p-8 lg:p-10 lg:min-h-[340px] ${b.palette}`}
             >
               {/* big shadow brand mark */}
               <div
@@ -65,11 +65,11 @@ export default function Brands() {
                 </span>
               </div>
 
-              <div className="relative mt-16">
-                <h3 className="display text-6xl leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
+              <div className="relative mt-10">
+                <h3 className="display text-4xl leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
                   {b.name}
                 </h3>
-                <div className={`mt-4 serif italic text-lg ${b.accent}`}>
+                <div className={`mt-3 serif italic text-base ${b.accent}`}>
                   — {b.tagline}
                 </div>
                 <div className="kicker mt-1" style={{ color: "currentColor", opacity: 0.5 }}>
@@ -77,12 +77,12 @@ export default function Brands() {
                 </div>
               </div>
 
-              <p className="relative mt-8 max-w-md text-sm leading-7 opacity-85 sm:mt-12 sm:text-base sm:leading-8">
+              <p className="relative mt-6 max-w-md text-sm leading-7 opacity-85">
                 {b.desc}
               </p>
 
               <div
-                className="relative mt-8 grid grid-cols-3 gap-2 sm:mt-14"
+                className="relative mt-8 grid grid-cols-3 gap-2"
               >
                 {[
                   ["منتخب", "۲۴"],

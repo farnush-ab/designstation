@@ -19,8 +19,8 @@ export default function Craft() {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   return (
-    <section id="craft" className="relative overflow-hidden py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section id="craft" className="relative overflow-hidden py-16 sm:py-24">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* left copy */}
           <div className="lg:col-span-7">
@@ -29,12 +29,12 @@ export default function Craft() {
               <span className="h-px w-8 bg-line" />
               <span className="serif italic normal-case text-sm text-ink-900/60">since 2014</span>
             </div>
-            <h2 className="display mt-4 text-5xl leading-[0.95] text-ink-900 sm:text-6xl lg:text-7xl">
-              فلسفه‌ی <span className="italic-serif italic text-brass-500">نوراکو</span>
+            <h2 className="display mt-4 text-3xl leading-[1] text-ink-900 sm:text-4xl lg:text-5xl">
+              فلسفه‌ی <span className="italic-serif italic text-ink-800">نوراکو</span>
             </h2>
 
             <div className="mt-10 space-y-6">
-              <p className="serif text-2xl leading-[1.35] text-ink-900 sm:text-3xl">
+              <p className="serif text-lg leading-[1.4] text-ink-900 sm:text-xl lg:text-2xl">
                 هر سوزن یک گامِ کوچک است در ماشینی که کل صنعتی را حرکت می‌دهد.
                 نوراکو زاده‌ی همین باور است.
               </p>
@@ -57,9 +57,9 @@ export default function Craft() {
                   {[...testimonials, ...testimonials].map((t, i) => (
                     <figure
                       key={i}
-                      className="w-[280px] shrink-0 rounded-2xl border border-line bg-paper-50 p-5 sm:w-[340px] sm:p-6"
+                      className="w-[280px] shrink-0 rounded-2xl border border-line bg-ink-50 p-5 sm:w-[340px] sm:p-6"
                     >
-                      <div className="serif italic text-brass-500 text-lg">
+                      <div className="serif italic text-ink-800 text-lg">
                         “
                       </div>
                       <blockquote className="mt-1 serif text-base leading-7 text-ink-900 sm:text-lg">
@@ -99,7 +99,7 @@ export default function Craft() {
                     fill="none"
                   />
                 </defs>
-                <text fill="#efe8d6" fontSize="14" letterSpacing="6" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                <text fill="#ebebee" fontSize="14" letterSpacing="6" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
                   <textPath href="#ring">
                     NOORACO · SEWING MACHINE PARTS · SINCE 2014 · TEHRAN, IR · NOORACO · SEWING MACHINE PARTS · SINCE 2014 · TEHRAN, IR ·
                   </textPath>
@@ -108,14 +108,14 @@ export default function Craft() {
               {/* center machine icon */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <svg viewBox="0 0 64 64" className="h-16 w-16">
-                  <g fill="#efe8d6">
+                  <g fill="#ebebee">
                     <rect x="14" y="6" width="3" height="6" rx="1" />
                     <rect x="47" y="6" width="3" height="6" rx="1" />
                     <path d="M10 14 H54 V20 H44 C44 28 38 32 30 32 V40 C30 46 26 52 18 52 H10 Z" />
                   </g>
                 </svg>
               </div>
-              <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 kicker text-paper-50/80">
+              <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 kicker text-ink-100/80">
                 est. 1393
               </div>
             </motion.div>

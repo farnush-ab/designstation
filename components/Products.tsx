@@ -12,7 +12,7 @@ const products = [
 
 function Mark({ kind }: { kind: string }) {
   const s = {
-    stroke: "#0b1e30",
+    stroke: "#102b42",
     strokeWidth: 1.4,
     fill: "none",
     strokeLinecap: "round" as const,
@@ -103,8 +103,8 @@ function TiltCard({ children }: { children: React.ReactNode }) {
 
 export default function Products() {
   return (
-    <section className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest2 text-ink-900/60">
@@ -112,8 +112,8 @@ export default function Products() {
               <span className="h-px w-8 bg-line" />
               <span className="serif italic normal-case text-sm text-ink-900/60">this season</span>
             </div>
-            <h2 className="display mt-4 text-5xl leading-[0.95] text-ink-900 sm:text-6xl lg:text-7xl">
-              منتخبِ <span className="italic-serif italic text-brass-500">امسال</span>
+            <h2 className="display mt-4 text-3xl leading-[1] text-ink-900 sm:text-4xl lg:text-5xl">
+              منتخبِ <span className="italic-serif italic text-ink-800">امسال</span>
             </h2>
           </div>
           <a href="#" className="hover-line text-[11px] uppercase tracking-widest2 text-ink-900">
@@ -133,17 +133,17 @@ export default function Products() {
               <TiltCard>
                 <a
                   href="#"
-                  className="group relative block overflow-hidden rounded-2xl bg-paper-50"
+                  className="group relative block overflow-hidden rounded-2xl bg-ink-50"
                 >
                   {/* top */}
                   <div className="relative flex items-start justify-between p-4 sm:p-5" style={{ transform: "translateZ(30px)" }}>
                     <div className="flex flex-col gap-1">
                       <span className="kicker">{p.brand}</span>
-                      <span className="serif italic text-xs text-brass-500">— {p.tag}</span>
+                      <span className="serif italic text-xs text-ink-800">— {p.tag}</span>
                     </div>
                     <button
                       aria-label="like"
-                      className="grid h-8 w-8 place-items-center rounded-full border border-line bg-paper-50/70 backdrop-blur transition-colors hover:bg-ink-900 hover:text-paper-50"
+                      className="grid h-8 w-8 place-items-center rounded-full border border-line bg-ink-50/70 backdrop-blur transition-colors hover:bg-ink-900 hover:text-ink-100"
                     >
                       <Heart className="h-3.5 w-3.5" />
                     </button>
@@ -161,7 +161,7 @@ export default function Products() {
                     </motion.div>
                     <div
                       aria-hidden
-                      className="pointer-events-none absolute inset-4 rounded-full bg-brass-500/8 blur-2xl"
+                      className="pointer-events-none absolute inset-4 rounded-full bg-ink-800/8 blur-2xl"
                     />
                   </div>
 
@@ -181,11 +181,11 @@ export default function Products() {
                         </div>
                       </div>
                       <span className="flex items-center gap-1 text-[11px] text-ink-900/70">
-                        <Star className="h-3 w-3 fill-brass-500 text-brass-500" />
+                        <Star className="h-3 w-3 fill-ink-800 text-ink-800" />
                         {p.rating.toLocaleString("fa-IR")}
                       </span>
                     </div>
-                    <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-ink-900/20 py-2.5 text-[11px] uppercase tracking-widest2 transition-colors hover:bg-ink-900 hover:text-paper-50">
+                    <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-ink-900/20 py-2.5 text-[11px] uppercase tracking-widest2 transition-colors hover:bg-ink-900 hover:text-ink-100">
                       <Plus className="h-3 w-3" />
                       افزودن
                     </button>

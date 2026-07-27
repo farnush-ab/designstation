@@ -29,7 +29,7 @@ function Word({
   return (
     <motion.span
       style={{ opacity }}
-      className={`inline-block ${italic ? "italic-serif italic ml-3 mr-1 text-brass-500" : ""}`}
+      className={`inline-block ${italic ? "italic-serif italic ml-3 mr-1 text-ink-800" : ""}`}
     >
       {text}{" "}
     </motion.span>
@@ -44,8 +44,8 @@ export default function Manifesto() {
   });
 
   return (
-    <section id="manifesto" ref={ref} className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
-      <div className="mx-auto max-w-[1400px] container-x">
+    <section id="manifesto" ref={ref} className="relative overflow-hidden py-16 sm:py-24 lg:py-40">
+      <div className="mx-auto max-w-[1240px] container-x">
         <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest2 text-ink-900/60">
           <span>۰۱ · manifesto</span>
           <span className="h-px flex-1 bg-line" />
@@ -54,7 +54,7 @@ export default function Manifesto() {
           </span>
         </div>
 
-        <p className="mt-10 display text-[9vw] leading-[1.05] text-ink-900 sm:text-[6vw] lg:text-[4.4vw]">
+        <p className="mt-8 display text-[6vw] leading-[1.15] text-ink-900 sm:text-[4vw] lg:text-[2.8vw]">
           {words.map((w, k) => {
             const start = Math.max(0, k / words.length - 0.05);
             const end = Math.min(1, (k + 1) / words.length + 0.05);
@@ -86,11 +86,11 @@ export default function Manifesto() {
               className="border-t border-line pt-5"
             >
               <div className="flex items-baseline justify-between">
-                <span className="serif italic text-xl text-brass-500">— {b.n}</span>
+                <span className="serif italic text-xl text-ink-800">— {b.n}</span>
                 <span className="kicker">principle</span>
               </div>
-              <h3 className="serif mt-3 text-3xl text-ink-900 sm:text-4xl">{b.t}</h3>
-              <p className="mt-3 text-sm leading-7 text-ink-900/70">{b.d}</p>
+              <h3 className="serif mt-2 text-xl text-ink-900 sm:text-2xl">{b.t}</h3>
+              <p className="mt-2 text-sm leading-7 text-ink-900/70">{b.d}</p>
             </motion.div>
           ))}
         </div>

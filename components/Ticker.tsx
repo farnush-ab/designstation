@@ -16,7 +16,7 @@ const items = [
 
 export default function Ticker() {
   return (
-    <section className="relative overflow-hidden border-y border-line bg-ink-900 py-3 text-paper-50">
+    <section className="relative overflow-hidden border-y border-line bg-ink-900 py-3 text-ink-100">
       {/* top */}
       <div className="marquee-mask overflow-hidden">
         <motion.div
@@ -30,7 +30,7 @@ export default function Ticker() {
               className="flex items-center gap-6 text-sm uppercase tracking-[0.35em]"
               style={{ fontWeight: 400 }}
             >
-              <span className="serif italic text-brass-400 text-base normal-case tracking-normal">
+              <span className="serif italic text-ink-500 text-base normal-case tracking-normal">
                 ✦
               </span>
               <span className="opacity-80">{b}</span>

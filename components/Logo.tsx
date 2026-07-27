@@ -9,7 +9,7 @@ export default function Logo({
   light?: boolean;
   large?: boolean;
 }) {
-  const fill = light ? "#efe8d6" : "#0b1e30";
+  const fill = light ? "#ebebee" : "#102b42";
   const size = large ? "h-8 w-8" : "h-5 w-5";
   const text = large ? "text-lg" : "text-xs";
   return (
