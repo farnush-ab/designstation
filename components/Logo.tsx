@@ -3,14 +3,18 @@
 export default function Logo({
   className = "",
   light = false,
+  large = false,
 }: {
   className?: string;
   light?: boolean;
+  large?: boolean;
 }) {
-  const fill = light ? "#fbfaf7" : "#102b42";
+  const fill = light ? "#efe8d6" : "#0b1e30";
+  const size = large ? "h-8 w-8" : "h-5 w-5";
+  const text = large ? "text-lg" : "text-xs";
   return (
-    <a href="#" className={`flex items-center gap-3 ${className}`} aria-label="Nooraco">
-      <svg viewBox="0 0 64 64" className="h-5 w-5" aria-hidden>
+    <a href="#top" className={`flex items-center gap-2.5 ${className}`} aria-label="Nooraco">
+      <svg viewBox="0 0 64 64" className={size} aria-hidden>
         <g fill={fill}>
           <rect x="14" y="6" width="3" height="6" rx="1" />
           <rect x="47" y="6" width="3" height="6" rx="1" />
@@ -18,8 +22,8 @@ export default function Logo({
         </g>
       </svg>
       <span
-        className="text-xs tracking-[0.32em] uppercase"
-        style={{ color: fill, fontWeight: 400 }}
+        className={`${text} uppercase tracking-[0.32em]`}
+        style={{ color: fill, fontWeight: 500 }}
       >
         nooraco
       </span>

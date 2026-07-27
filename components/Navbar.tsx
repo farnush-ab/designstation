@@ -1,15 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowUpLeft, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const links = [
-  { label: "محصولات", href: "#categories" },
+  { label: "مجموعه", href: "#bento" },
+  { label: "چرخ‌ها", href: "#chapters" },
   { label: "برندها", href: "#brands" },
-  { label: "اخبار", href: "#news" },
-  { label: "درباره", href: "#vision" },
-  { label: "تماس", href: "#footer" },
+  { label: "مجله", href: "#journal" },
+  { label: "درباره", href: "#craft" },
 ];
 
 export default function Navbar() {
@@ -17,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,37 +26,40 @@ export default function Navbar() {
   return (
     <>
       <header
+        id="top"
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-cream-50/85 backdrop-blur-md border-b border-line" : "bg-transparent"
+          scrolled
+            ? "bg-paper-100/80 backdrop-blur-xl border-b border-line"
+            : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3.5">
+        <nav className="mx-auto flex max-w-[1400px] items-center justify-between container-x py-4">
           <Logo />
-          <ul className="hidden items-center gap-7 lg:flex">
+
+          <ul className="hidden items-center gap-8 lg:flex">
             {links.map((l) => (
               <li key={l.label}>
-                <a
-                  href={l.href}
-                  className="hover-line text-xs text-ink-900/85 transition-colors hover:text-ink-900"
-                >
+                <a href={l.href} className="hover-line text-xs text-ink-900/85">
                   {l.label}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="flex items-center gap-5">
+
+          <div className="flex items-center gap-4">
             <a
-              href="#categories"
-              className="hover-line hidden text-[10px] uppercase tracking-widest2 text-ink-900 md:inline-block"
+              href="#contact"
+              className="hidden md:inline-flex items-center gap-2 rounded-full border border-ink-900/25 bg-paper-50/60 px-4 py-2 text-[11px] uppercase tracking-widest2 text-ink-900 backdrop-blur transition-colors hover:bg-ink-900 hover:text-paper-50"
             >
-              فروشگاه →
+              تماس
+              <ArrowUpLeft className="h-3 w-3" />
             </a>
             <button
               onClick={() => setOpen(true)}
-              className="flex h-9 w-9 items-center justify-center text-ink-900 lg:hidden"
-              aria-label="منو"
+              className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/20 bg-paper-50/40 text-ink-900 backdrop-blur lg:hidden"
+              aria-label="menu"
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-4 w-4" />
             </button>
           </div>
         </nav>
@@ -68,44 +71,59 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-ink-900/20 backdrop-blur-sm lg:hidden"
-            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-[60] lg:hidden"
           >
+            <div
+              className="absolute inset-0 bg-ink-900/60 backdrop-blur-sm"
+              onClick={() => setOpen(false)}
+            />
             <motion.aside
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
               transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.6 }}
-              className="absolute inset-y-0 right-0 flex w-80 max-w-[85%] flex-col gap-8 bg-cream-50 px-7 py-7"
-              onClick={(e) => e.stopPropagation()}
+              className="absolute inset-x-0 top-0 flex flex-col gap-8 bg-paper-100 px-6 pb-10 pt-6"
             >
               <div className="flex items-center justify-between">
                 <Logo />
-                <button onClick={() => setOpen(false)} className="p-2" aria-label="بستن">
-                  <X className="h-5 w-5" />
+                <button
+                  onClick={() => setOpen(false)}
+                  className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/20"
+                >
+                  <X className="h-4 w-4" />
                 </button>
               </div>
-              <ul className="flex flex-col gap-1">
+              <ul className="flex flex-col divide-y divide-line border-y border-line">
                 {links.map((l, i) => (
-                  <li key={l.label}>
+                  <motion.li
+                    key={l.label}
+                    initial={{ y: 12, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.06 * i }}
+                  >
                     <a
                       onClick={() => setOpen(false)}
                       href={l.href}
-                      className="block border-b border-line py-4 text-base text-ink-900 hover:text-ink-800"
+                      className="flex items-baseline justify-between py-5"
                     >
-                      <span className="ml-3 text-xs text-ink-900/40">0{i + 1}</span>
-                      {l.label}
+                      <span className="serif text-3xl text-ink-900">{l.label}</span>
+                      <span className="kicker">0{i + 1}</span>
                     </a>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
               <a
-                href="#categories"
+                href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-auto inline-block border-b border-ink-900 pb-1 text-sm uppercase tracking-widest2 text-ink-900"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-5 py-4 text-sm text-paper-50"
               >
-                ورود به فروشگاه
+                تماس با ما
+                <ArrowUpLeft className="h-4 w-4" />
               </a>
+              <div className="flex items-center justify-between text-xs text-ink-900/60">
+                <span>hello@nooraco.ir</span>
+                <span>Tehran · IR</span>
+              </div>
             </motion.aside>
           </motion.div>
         )}

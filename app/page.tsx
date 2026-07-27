@@ -1,34 +1,34 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
-import Categories from "@/components/Categories";
-import MachineTypes from "@/components/MachineTypes";
-import News from "@/components/News";
-import BestSellers from "@/components/BestSellers";
+import Ticker from "@/components/Ticker";
+import Manifesto from "@/components/Manifesto";
+import Bento from "@/components/Bento";
+import Chapters from "@/components/Chapters";
+import Products from "@/components/Products";
 import Brands from "@/components/Brands";
-import WhyNoora from "@/components/WhyNoora";
-import Vision from "@/components/Vision";
+import Craft from "@/components/Craft";
 import Stats from "@/components/Stats";
+import Journal from "@/components/Journal";
 import Faq from "@/components/Faq";
-import CtaBand from "@/components/CtaBand";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative overflow-x-clip">
+    <main className="relative">
       <Navbar />
       <Hero />
-      <Marquee />
-      <Categories />
-      <MachineTypes />
+      <Ticker />
+      <Manifesto />
+      <Bento />
+      <Chapters />
+      <Products />
       <Brands />
-      <BestSellers />
-      <Vision />
+      <Craft />
       <Stats />
-      <WhyNoora />
-      <News />
+      <Journal />
       <Faq />
-      <CtaBand />
+      <Contact />
       <Footer />
     </main>
   );
