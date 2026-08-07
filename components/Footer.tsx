@@ -1,16 +1,33 @@
 const cols = [
   {
     heading: "COLLECTIONS",
-    items: ["شیرآلات", "سرامیک و کاشی", "روشنایی"],
+    items: [
+      { label: "شیرآلات", href: "#categories" },
+      { label: "سرامیک و کاشی", href: "#categories" },
+      { label: "روشنایی", href: "#categories" },
+    ],
   },
   {
     heading: "STUDIO",
-    items: ["درباره ما", "برندها", "پروژه‌ها", "مجله"],
+    items: [
+      { label: "درباره ما", href: "#showroom" },
+      { label: "برندها", href: "#brands" },
+      { label: "پروژه‌ها", href: "#projects" },
+      { label: "مجله", href: "#" },
+    ],
   },
   {
     heading: "CONTACT",
-    items: ["پالادیوم تهران", "دبی · امارات", "hello@designstation.ir"],
+    items: [
+      { label: "پالادیوم تهران", href: "#showroom" },
+      { label: "دبی · امارات", href: "#showroom" },
+      { label: "s.nahvi@designstation.net", href: "mailto:s.nahvi@designstation.net" },
+    ],
   },
+];
+
+const follow = [
+  { label: "Instagram", href: "https://instagram.com/designstation.iran" },
 ];
 
 export default function Footer() {
@@ -30,9 +47,9 @@ export default function Footer() {
               <p className="kicker mb-5">{col.heading}</p>
               <ul className="space-y-3 text-sm text-walnut-800">
                 {col.items.map((it) => (
-                  <li key={it}>
-                    <a href="#" className="hover-line">
-                      {it}
+                  <li key={it.label}>
+                    <a href={it.href} className="hover-line">
+                      {it.label}
                     </a>
                   </li>
                 ))}
@@ -43,9 +60,18 @@ export default function Footer() {
           <div className="md:col-span-2">
             <p className="kicker mb-5">FOLLOW</p>
             <ul className="space-y-3 text-sm text-walnut-800">
-              <li><a href="#" className="hover-line">Instagram</a></li>
-              <li><a href="#" className="hover-line">Pinterest</a></li>
-              <li><a href="#" className="hover-line">LinkedIn</a></li>
+              {follow.map((f) => (
+                <li key={f.label}>
+                  <a
+                    href={f.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover-line"
+                  >
+                    {f.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
