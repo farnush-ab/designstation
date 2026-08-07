@@ -23,8 +23,8 @@ export default function ContactBand() {
             <Item
               icon={<Mail size={18} />}
               label="EMAIL"
-              value="hello@designstation.ir"
-              href="mailto:hello@designstation.ir"
+              value="s.nahvi@designstation.net"
+              href="mailto:s.nahvi@designstation.net"
             />
           </Reveal>
           <Reveal delay={0.15}>

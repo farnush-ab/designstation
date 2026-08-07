@@ -185,15 +185,17 @@ export default function Navbar() {
 
               <div className="grid grid-cols-2 gap-4 text-sm text-walnut-800">
                 <a
-                  href="mailto:hello@designstation.ir"
+                  href="mailto:s.nahvi@designstation.net"
                   className="flex items-center gap-2"
                   dir="ltr"
                 >
                   <Mail size={14} className="text-walnut-700" />
-                  <span>hello@designstation.ir</span>
+                  <span>s.nahvi@designstation.net</span>
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/designstation.iran"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-end gap-2"
                 >
                   <Instagram size={14} className="text-walnut-700" />
